@@ -18,8 +18,8 @@ router.route('/:id').get((req, res) => {
 //add 1 Exercise
 router.route('/add').post((req, res) => {
     const username = req.body.username;
-    const description - req.body.description;
-    const duration - Number(req.body.duration);
+    const description = req.body.description;
+    const duration = Number(req.body.duration);
     const date = Date.parse(req.body.date);
 
     const newExercise = new Exercise({
@@ -45,7 +45,7 @@ router.route('/update/:id').post((req, res) => {
 
           exercise.save()
             .then(() => res.json('Update!'))
-            .catch(err => res.status(400).json('Error: ' +err);
+            .catch(err => res.status(400).json('Error: ' +err));
       })
       .catch(err => res.status(400).json('Error: ' + err));
 });
